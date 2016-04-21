@@ -1,0 +1,32 @@
+var path = require('path')
+var BUILD_DIR = path.resolve(__dirname, "public");
+var APP_DIR = path.resolve(__dirname, "app");
+var STYLES_DIR = path.resolve(__dirname, "styles");
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+var config = {
+  entry : APP_DIR + "/index.jsx",
+  output: {
+    path: BUILD_DIR,
+    filename : 'bundle.js'
+  },
+  module : {
+    loaders : [
+      {
+        test : /\.jsx?/,
+        include : APP_DIR,
+        loaders : ['babel']
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject : true,
+      template : './index.html'
+    }),
+  ]
+}
+
+module.exports = config
+
