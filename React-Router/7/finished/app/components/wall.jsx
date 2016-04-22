@@ -9,7 +9,7 @@ class Wall extends React.Component {
       "Waiting Eagerly for Redux!"
     ]
 
-    let statusMessages = messages.map(msg => <StatusMessage message={msg} />)
+    let statusMessages = messages.map((msg, i) => <StatusMessage key={i} message={msg} />)
 
     return <div>{statusMessages}</div>;
   }
