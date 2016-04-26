@@ -4,28 +4,20 @@ import LikeButton from './like.jsx';
 
 class StatusMessage extends React.Component {
 
-  constructor() {
-    super()
-    this.state = {likesCount : 0}
-  }
-
   onLike () {
-    this.setState({likesCount : this.state.likesCount + 1})
+    this.props.onLike(this.props.status.id);
   }
 
   render () {
+    let status = this.props.status
     return (
       <Panel>
-        <p>{this.props.message}</p>
-        <p>{this.state.likesCount} Likes</p>
+        <p>{status.message}</p>
+        <p>{status.likesCount} Likes</p>
         <LikeButton onLike={this.onLike.bind(this)}/>
       </Panel>
     );
   }
-}
-
-StatusMessage.propTypes = {
-  message : React.PropTypes.string.isRequired
 }
 
 export default StatusMessage;

@@ -4,6 +4,9 @@ import {Grid, Row, Col} from 'react-bootstrap';
 import AppNavBar from './components/appNavBar.jsx';
 import Wall from './components/wall.jsx';
 import {Router, browserHistory, Route, IndexRoute, Link} from 'react-router';
+import store from './store';
+import {likeStatusMessage} from './actions';
+import {Provider} from 'react-redux';
 
 class App extends React.Component {
   render () {
@@ -53,4 +56,11 @@ const router = (
   </Router>
 )
 
-render(router, document.getElementById("app"))
+let app = (
+  <Provider store={store}>{router}</Provider>
+)
+
+window.store = store;
+window.likeStatusMessage = likeStatusMessage;
+
+render(app, document.getElementById("app"))

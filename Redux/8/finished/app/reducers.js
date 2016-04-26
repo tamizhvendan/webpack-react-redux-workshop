@@ -1,4 +1,4 @@
-import {likeStatusMessage, STATUS_MESSAGE_LIKED} from './action.js'
+import {likeStatusMessage, STATUS_MESSAGE_LIKED} from './actions.js'
 
 export function statusMessages(state, action) {
 
