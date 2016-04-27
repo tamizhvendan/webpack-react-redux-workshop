@@ -10,17 +10,7 @@ class CreateContact extends React.Component {
     this.state = {
       firstName : "",
       lastName : "",
-      email : "",
-      errors : {
-        firstName : {
-          state: undefined
-          message: undefined
-        },
-        email : {
-          state: undefined
-          message: undefined
-        }
-      }
+      email : ""
     }
   }
 
@@ -52,7 +42,7 @@ class CreateContact extends React.Component {
           </Col>
           <Col xs={8}>
             <FormControl type="text" placeholder="First Name"
-              onChange={this.onFirstNameChange.bind(this)} validationState={this.state.firstName.}/>
+              onChange={this.onFirstNameChange.bind(this)}/>
           </Col>
           <FormControl.Feedback />
         </FormGroup>
