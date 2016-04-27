@@ -1,0 +1,16 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Smith",
+      "email": "jsmith@jsmith.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Paul",
+      "lastName": "Adams",
+      "email": "adams@jsmith.com"
+    }
+  ]
+}
