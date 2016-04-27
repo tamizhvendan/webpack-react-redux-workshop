@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import {Table, Grid, Row, Col, Panel, Glyphicon, Button} from 'react-bootstrap';
 
 class Home extends React.Component {
@@ -27,9 +28,9 @@ class Home extends React.Component {
         <Row>
           <Col xsOffset={9} xs={3}>
             <Panel>
-              <Button bsStyle="primary" bsSize="large">
-                Create New Contact               
-              </Button>
+              <Link to="/contact/create">
+                Create New Contact
+              </Link>
             </Panel>
           </Col>
         </Row>
@@ -50,7 +51,11 @@ class ContactRow extends React.Component {
     return (
       <tr>
         <td>{name}</td>
-        <td>View | Edit | Delete </td>
+        <td>
+          <Link to={`contact/${contact.id}`}>View</Link>
+          | Edit
+          | Delete
+        </td>
       </tr>
     );
   }

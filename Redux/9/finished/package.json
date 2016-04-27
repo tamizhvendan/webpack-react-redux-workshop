@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node webpack-server.js & json-server db.json -p 5000 -d 1500"
+    "start": "node webpack-server.js & json-server db.json -p 5000 -d 1500 --static ./public"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.3.0",
     "redux": "^3.5.2",
+    "revalidator": "^0.3.1",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   }
