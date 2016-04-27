@@ -2,6 +2,7 @@ import React from 'react';
 import {Navbar} from 'react-bootstrap';
 import {Router, Route, IndexRoute , Link, browserHistory} from 'react-router';
 import {render} from 'react-dom';
+import Home from './contacts/home.jsx';
 
 class App extends React.Component {
 
@@ -21,6 +22,7 @@ class App extends React.Component {
     return (
       <div>
         {this.navBar()}
+        {this.props.children}
       </div>
     );
   }
@@ -29,7 +31,7 @@ class App extends React.Component {
 const router = (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      
+      <IndexRoute component={Home} />
     </Route>
   </Router>
 );
