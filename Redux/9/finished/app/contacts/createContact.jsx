@@ -1,7 +1,5 @@
 import React from 'react';
 import {Panel, Form, FormControl, FormGroup, Col, Button} from 'react-bootstrap';
-import revalidator from 'revalidator';
-import contactSchema from './contactSchema';
 
 class CreateContact extends React.Component {
 
@@ -26,11 +24,6 @@ class CreateContact extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log(contactSchema);
-    let result = revalidator.validate(this.state, contactSchema)
-    if (result.valid) {
-
-    }
   }
 
   formInstance () {
