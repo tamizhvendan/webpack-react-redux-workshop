@@ -1,6 +1,6 @@
 import React from 'react';
-import {Panel} from 'react-bootstrap';
 import LikeButton from './like.jsx';
+import Card from 'material-ui/lib/card/card';
 
 class StatusMessage extends React.Component {
 
@@ -14,12 +14,13 @@ class StatusMessage extends React.Component {
   }
 
   render () {
+    let style = {margin : 20, padding: 20}
     return (
-      <Panel>
+      <Card style={style}>
         <p>{this.props.message}</p>
         <p>{this.state.likesCount} Likes</p>
         <LikeButton onLike={this.onLike.bind(this)}/>
-      </Panel>
+      </Card>
     );
   }
 }

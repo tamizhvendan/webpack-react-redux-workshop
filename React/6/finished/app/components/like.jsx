@@ -1,11 +1,14 @@
 import React from 'react';
-import {Glyphicon, Button} from 'react-bootstrap';
+import IconButton from 'material-ui/lib/icon-button';
+import ThumbsUpIcon from 'material-ui/lib/svg-icons/action/thumb-up';
 
 class LikeButton extends React.Component {
   render () {
-    return  (<Button onClick={this.props.onLike} bsStyle="primary">
-              <Glyphicon glyph="thumbs-up"/>
-            </Button>);
+    return (
+      <IconButton tooltip="like" onClick={this.props.onLike}>
+        <ThumbsUpIcon />
+      </IconButton>
+    )
   }
 }
 

@@ -1,19 +1,22 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Grid, Row, Col} from 'react-flexgrid';
 import AppNavBar from './components/appNavBar.jsx';
 import Wall from './components/wall.jsx';
+
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
 
 class App extends React.Component {
 
   render () {
+    window.g = Grid;
     return (
       <div>
         <AppNavBar />
         <Grid>
-          <Row>
-            <Col xs={6} xsOffset={3}><Wall /></Col>
-          </Row>
+          <Col><Wall /></Col>
         </Grid>
       </div>
 
